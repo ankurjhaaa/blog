@@ -10,6 +10,7 @@
 
   @include("includes.navbar")
   @include("includes.headNews")
+  
   @include("includes.mainNews")
   @include("includes.footer")
 

@@ -14,6 +14,8 @@ Route::get('/admin', [HomeController::class,"pageDashboard"])->name("adminDashbo
 
 Route::get('/admin/topic', [TopicController::class,"pageTopicData"])->name("adminTopic.page");
 Route::post('/admin/insertTopic', [TopicController::class,"insertTopicData"])->name("insertTopic.page");
+Route::get('/', [TopicController::class, "homeTopicView"]);
+
 
 
 Route::get('/admin/post', [PostController::class,"pagePostData"])->name("adminPost.page");
