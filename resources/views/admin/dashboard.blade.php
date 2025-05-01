@@ -59,23 +59,18 @@
             </tr>
           </thead>
           <tbody class="text-gray-700">
+            @foreach ($allPosts as $allPostsView)
             <tr class="border-b hover:bg-gray-50">
-              <td class="py-2">1</td>
-              <td class="py-2">PM inaugurates new AI center</td>
-              <td class="py-2">National</td>
-              <td class="py-2">Admin</td>
-              <td class="py-2">2025-04-29</td>
-              <td class="py-2"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Published</span></td>
+              <td class="py-2">{{ $allPostsView->id }}</td>
+              <td class="py-2">{{ $allPostsView->title }}</td>
+              <td class="py-2">{{ $allPostsView->topicId }}</td>
+              <td class="py-2">{{ $allPostsView->author }}</td>
+              <td class="py-2">{{ $allPostsView->created_at }}</td>
+              <td class="py-2"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">{{ $allPostsView->status }}</span></td>
             </tr>
-            <tr class="border-b hover:bg-gray-50">
-              <td class="py-2">2</td>
-              <td class="py-2">IPL: RCB wins by 7 wickets</td>
-              <td class="py-2">Sports</td>
-              <td class="py-2">Editor</td>
-              <td class="py-2">2025-04-28</td>
-              <td class="py-2"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Draft</span></td>
-            </tr>
-            <!-- Add more rows as needed -->
+            
+            @endforeach
+            
           </tbody>
         </table>
       </div>

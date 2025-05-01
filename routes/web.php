@@ -9,15 +9,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/admin', [HomeController::class,"pageDashboard"])->name("adminDashboard.page");
+Route::get('/admin', [HomeController::class, 'pageDashboard'])->name('adminDashboard.page');
+
+// web.php
+Route::get('/', [HomeController::class, 'index']);
 
 
 Route::get('/admin/topic', [TopicController::class,"pageTopicData"])->name("adminTopic.page");
 Route::post('/admin/insertTopic', [TopicController::class,"insertTopicData"])->name("insertTopic.page");
-Route::get('/', [TopicController::class, "homeTopicView"]);
 
 
 
 Route::get('/admin/post', [PostController::class,"pagePostData"])->name("adminPost.page");
 Route::post('/admin/insertPost', [PostController::class,"insertPostData"])->name("adminInsertPost.page");
+
 
