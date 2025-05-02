@@ -9,14 +9,16 @@ class TopicController extends Controller
 {
     public function pageTopicData()
     {
-        return view("admin.topic");
+        $allAdminTopics = Topic::orderBy("id", "DESC")->get();
+        return view("admin.topic", compact("allAdminTopics"));
     }
-    public function homeTopicView()
+        
+    public function selectTopicInPostAdmin()
     {
-        $allTopics = Topic::orderBy("id", "DESC")->get();
-        return view("home", compact("allTopics"));
+        $selectTopicInPost = Topic::all();
+        return view("admin/post", compact("selectTopicInPost"));
     }
-
+        
     public function insertTopicData(Request $request)
     {
         Topic::create([

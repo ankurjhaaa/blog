@@ -33,32 +33,25 @@
           <thead>
             <tr class="bg-gray-200 text-gray-700">
               <th class="py-2 px-4 border">#</th>
-              <th class="py-2 px-4 border">Category Name</th>
+              <th class="py-2 px-4 border">Topic Name</th>
               <th class="py-2 px-4 border">Description</th>
               <th class="py-2 px-4 border text-center">Action</th>
             </tr>
           </thead>
           <tbody>
-            <!-- Dummy rows -->
+            @foreach ($allAdminTopics as $allAdminTopicsView)
             <tr class="hover:bg-gray-50 border">
-              <td class="py-2 px-4 border">1</td>
-              <td class="py-2 px-4 border">Politics</td>
-              <td class="py-2 px-4 border">National political updates and articles.</td>
+              <td class="py-2 px-4 border">{{ $allAdminTopicsView->id }}</td>
+              <td class="py-2 px-4 border">{{ $allAdminTopicsView->topicName }}</td>
+              <td class="py-2 px-4 border">{{ $allAdminTopicsView->description }}</td>
               <td class="py-2 px-4 border text-center space-x-2">
                 <button class="text-blue-600 hover:underline">Edit</button>
                 <button class="text-red-600 hover:underline">Delete</button>
               </td>
             </tr>
-            <tr class="hover:bg-gray-50 border">
-              <td class="py-2 px-4 border">2</td>
-              <td class="py-2 px-4 border">Technology</td>
-              <td class="py-2 px-4 border">Latest tech trends and news.</td>
-              <td class="py-2 px-4 border text-center space-x-2">
-                <button class="text-blue-600 hover:underline">Edit</button>
-                <button class="text-red-600 hover:underline">Delete</button>
-              </td>
-            </tr>
-            <!-- Add more rows as needed -->
+            
+            @endforeach
+            
           </tbody>
         </table>
       </div>
@@ -69,7 +62,7 @@
         <form method="post" Action="{{ route("insertTopic.page") }}">
           @csrf
           <div class="mb-4">
-            <label class="block text-sm mb-1 text-gray-600">Category Name</label>
+            <label class="block text-sm mb-1 text-gray-600">Topic Name</label>
             <input type="text" name="topic" placeholder="e.g., Sports" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-400" />
           </div>
           <div class="mb-4">

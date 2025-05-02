@@ -4,7 +4,7 @@
       <nav class="space-y-3 text-gray-700">
         <a href="{{ route("adminDashboard.page") }}" class="block px-4 py-2 rounded-md hover:bg-red-100 hover:text-red-600 font-medium">📊 Dashboard</a>
         <a href="{{ route("adminPost.page") }}" class="block px-4 py-2 rounded-md hover:bg-red-100 hover:text-red-600 font-medium">📝 Posts</a>
-        <a href="{{ route("adminTopic.page") }}" class="block px-4 py-2 rounded-md hover:bg-red-100 hover:text-red-600 font-medium">📂 Categories</a>
+        <a href="{{ route("adminTopic.page") }}" class="block px-4 py-2 rounded-md hover:bg-red-100 hover:text-red-600 font-medium">Topic</a>
         <a href="#" class="block px-4 py-2 rounded-md hover:bg-red-100 hover:text-red-600 font-medium">👥 Users</a>
         <a href="#" class="block px-4 py-2 rounded-md hover:bg-red-100 hover:text-red-600 font-medium">⚙️ Settings</a>
       </nav>

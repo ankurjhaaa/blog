@@ -84,9 +84,12 @@
               <div class="mb-3">
                 <label class="block text-sm mb-1 text-gray-600">Topic</label>
                 <select name="topicId" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-400">
-                  <option value="">-- Select Category --</option>
-                  <option value="1">Entertainment</option>
-                  <option value="2">Today</option>
+                  <option value="">-- Select Topic --</option>
+                  @foreach ($selectTopicInPost as $selectTopicInPostAdmin)
+                  <option value="{{ $selectTopicInPostAdmin->id }}">{{ $selectTopicInPostAdmin->topicName }}</option>
+                  
+                  @endforeach
+                  
                   
                 </select>
               </div>
