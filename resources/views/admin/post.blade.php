@@ -22,7 +22,7 @@
         <h1 class="text-2xl font-semibold text-gray-800">Category</h1>
         <div class="flex items-center space-x-4">
           <span class="text-sm text-gray-600">👋 Admin</span>
-          <button class="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 text-sm">Logout</button>
+          <a href="{{ route('securelogout.page') }}" class="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 text-sm">Logout</a>
         </div>
       </div>
       <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md">
@@ -76,11 +76,10 @@
                 <input type="text" placeholder="Enter news title" name="title"
                   class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-400">
               </div>
-              <div class="mb-3">
-                <label class="block text-sm mb-1 text-gray-600">Author</label>
-                <input type="text" placeholder="e.g., Editor Name" name="author"
-                  class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-400">
-              </div>
+              
+               
+                <input type="hidden"  name="author" value="{{  Auth::user()->name }}">
+             
               <div class="mb-3">
                 <label class="block text-sm mb-1 text-gray-600">Topic</label>
                 <select name="topicId" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-400">
@@ -111,6 +110,7 @@
                   <option value="0">Draft</option>
                 </select>
               </div>
+
               <button type="submit" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">Add Post</button>
             </form>
           </div>

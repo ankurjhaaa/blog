@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("author");
             $table->float("topicId");
             $table->string("img");
-            $table->string("content");
+            $table->text("content");
             $table->float("status");
 
             $table->timestamps();

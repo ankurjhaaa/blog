@@ -20,7 +20,7 @@
         <h1 class="text-2xl font-semibold text-gray-800">Dashboard</h1>
         <div class="flex items-center space-x-4">
           <span class="text-sm text-gray-600">👋 Admin</span>
-          <button class="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 text-sm">Logout</button>
+          <a href="{{ route('securelogout.page') }}" class="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 text-sm">Logout</a>
         </div>
       </div>
 
